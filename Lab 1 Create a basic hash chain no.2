@@ -1,0 +1,11 @@
+class Blockchain {
+    constructor() {
+        this.blockchain = [new Block("Genesis Block", '')];
+    }
+    getLastBlock() {
+        return this.blockchain[this.blockchain.length-1];
+    }
+    createBlock(data) {
+        this.blockchain.push(new Block(data, this.getLastBlock().hash));
+    }
+ }
