@@ -1,0 +1,11 @@
+  isBlockchainValid() {
+        for (let i=1; i<this.blockchain.length; i++) {
+            let currentBlock = this.blockchain[i];
+            let previousBlock = this.blockchain[i-1];
+                if ((currentBlock.previousHash !== previousBlock.hash) ||
+                (currentBlock.hash !== currentBlock.getHash())) {
+                return false;
+                }
+        }
+        return true;
+    }
